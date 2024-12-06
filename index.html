@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TanoyBosh</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-hl4p+Kd4+J8w5UqGNf0Mf/zVrNN0JYWmL0o2b+6JsoGKgj4eI2jz2YxOYOHZTr/WnZ9Cc1s/5eaO9XhSINZ7eA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+/* Basic reset and common styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: black;
+}
+.type {
+  display: block;
+  white-space: nowrap; /* Prevent line break */
+  overflow: hidden; /* Hide overflow */
+  margin: 20px 0; /* Add space between lines */
+  height: 2em; /* Set a fixed height for each line */
+}
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+/* Header Styles */
+header {
+    background-size: cover;
+    color: black;
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 100px;
+ }
+.header-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+/* Section Styles */
+section {
+  padding: 50px 0;
+  text-align: center;
+}
+.navbar {
+  background-color: #f9f9f9;
+  color: white;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  padding-left: 10px;
+}
+.nav-links {
+  list-style: none;
+  margin: 0.5rem;
+  text-align: justify;
+}
+.nav-links li {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 5px;
+}
+.nav-links li:last-child {
+  margin-right: 0;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  padding: 5%;
+}
+.nav-links li a:hover {
+  border-radius: 5px;
+  background-color: #aeaeae;
+}
+/* Section container */
+#skills {
+    padding: 50px 0; /* Add padding to the top and bottom */
+    text-align: center; /* Align content to the center */
+  }
+  /* Skills container */
+  .skills-container {
+    max-width: 800px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+  /* List container */
+  .skills-list {
+    list-style-type: none; /* Remove the default list style */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Align list items to the center */
+  }
+  /* List items */
+  .skills-list li {
+    display: inline-block; /* Display list items inline */
+    margin-right: 20px; /* Add spacing between list items */
+    font-size: 30px; /* Adjust the font size */
+    padding: 0.5%;
+  }
+  /* Icons */
+  .skills-list li i {
+    margin-right: 5px;
+}  
+#education {
+    padding: 100px 0;
+    text-align: center;
+  }
+  .education-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 70%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .gap{
+    padding: 20px;
+  }
+  .education-card h3 {
+    font-size: 20px;
+  }
+  .education-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+#projects {
+    padding: 50px 0;
+    text-align: center;
+  }
+  .project-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 70%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+.gap{
+  padding: 10px;
+}
+  .project-card h3 {
+    font-size: 20px;
+  }
+  .project-card p {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+  .project-card a {
+    background-color: #555;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .project-card a:hover {
+    background-color: rgb(0, 25, 185);
+}
+#experience {
+    padding: 50px 0;
+    text-align: center;
+  }
+ .experience-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+ .experience-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    max-width: 70%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+ .experience-card h3 {
+    font-size: 20px;
+  }
+ .experience-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.contact-section {
+    text-align: center;
+    margin: 50px 0;
+}
+.contact-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.contact-section p {
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+.contact-links {
+    list-style: none;
+    padding: 0;
+}
+.contact-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+.contact-links li:last-child {
+    margin-right: 0;
+}
+.contact-links a {
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+.contact-links a:hover {
+    color: rgb(0, 25, 185);
+}
+.contact-links a i {
+    margin-right: 5px;
+}
+footer {
+    text-align: center; 
+    background-color: #ddd;
+    padding: 1px;
+    color: black;
+}
+</style>
+
+<script>
+const texts = [
+    "Hello!",
+    "I'm Tanoy Bosh",
+    "a Software Engineer"
+];
+let textIndex = 0;
+let charIndex = 0;
+let currentText = '';
+let typingTimeout;
+function typeWriter() {
+    if (textIndex === texts.length) return; // Stop if all lines have been typed    
+    currentText = texts[textIndex];
+    if (charIndex < currentText.length) {
+        document.querySelectorAll('.type')[textIndex].textContent += currentText.charAt(charIndex);
+        charIndex++;
+        typingTimeout = setTimeout(typeWriter, 100); // Speed of typing (milliseconds)
+    } else {
+        charIndex = 0;
+        textIndex++;
+        typingTimeout = setTimeout(typeWriter, 1000); // Delay between lines (milliseconds)
+    }
+}
+typeWriter(); 
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
+
+<body class="element">
+    <nav class="navbar">
+        <div class="container">
+          <a href="#home" class="logo">Tanoy Bosh</a>
+          <ul class="nav-links">
+            <li><a href="#home">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>      
+
+  <header id="home">
+    <div class="header-content">
+      <h1 class="type"></h1>
+      <h1 class="type"></h1>
+      <h1 class="type"></h1>
+    </div>
+  </header>
+
+  <section id="education">
+    <h1>Education</h1>
+    <div class="education-cards">
+      <div class="education-card">
+        <h3>Institute of Engineering and Management <br> Kolkata</h3>            
+        <p>Bachelor of Technology <br> B.Tech<p>
+        <p>Computer Science and Engineering <br> CSE</p>
+        <p>2017 - 2021</p>
+      </div>
+      <div class="gap"></div>
+      <div class="education-card">
+        <h3>Maulana Abul Kalam Azad University of Technology <br> West Bengal</h3>
+        <p>Master of Technology <br> M.Tech</p>
+        <p>Computer Science and Engineering <br> CSE</p>
+        <p>2021 - 2023</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="skills">
+    <h1>Skills</h1>
+    <div class="skills-container">
+      <ul class="skills-list">
+        <li><i class="fas fa-code"></i> C++</li>
+        <li><i class="fab fa-python"></i> Python</li>
+        <li><i class="fab fa-html5"></i> HTML</li>
+        <li><i class="fab fa-css3-alt"></i> CSS</li>
+        <li><i class="fab fa-js-square"></i> JavaScript</li>
+        <li><i class="fas fa-database"></i> MongoDB</li>
+        <li><i class="fab fa-node-js"></i> Express.js</li>
+        <li><i class="fab fa-react"></i> React</li>
+        <li><i class="fab fa-node-js"></i> Node.js</li>
+      </ul>
+    </div>
+  </section>  
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-cards">
+      <div class="project-card">
+        <h3>Covid-19 Vaccine Registration Web Application</h3>
+        <p>2021</p>
+        <p>Developed and deployed web application from scratch, utilizing HTML, CSS, JavaScript (front-end), Node.js (back-end), and MongoDB (database). Demonstrated proficiency in the full-stack development process. Effectively applied a diverse technology stack (HTML, CSS, JavaScript, Node.js, MongoDB) to address real-world challenges and create a functional web application.</p>
+        <a href="https://github.com/TanoyBosh/Covid-19-Registration-Web-App.git">View Details</a>
+      </div>
+      <div class="gap"></div>
+      <div class="project-card">
+        <h3>A Comparative Analysis of LSTM and SVR for Financial Market Stock Price Prediction</h3>
+        <p>2023</p>
+        <p>Conducted independent research comparing the effectiveness of Long Short-Term Memory (LSTM) and Support Vector Regression (SVR) models for predicting stock prices of major companies (AAPL, GOOG, MSFT, AMZN).Demonstrated the ability of LSTM models to capture complex stock price patterns, resulting in superior accuracy compared to SVR models.</p>
+        <a href="https://github.com/TanoyBosh/LSTM-vs-SVR">View Details</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="experience-cards">
+      <div class="experience-card">
+        <h3>Industrial Summer Training Program on Ethical Hacking & Cyber Security</h3>
+        <p>Organizer - MYWBUT | 1 August - 30 September, 2020<p>
+                <p>Gained knowledge in penetration testing using Kali Linux, employing methodologies for network scans, vulnerability identification, and social engineering techniques. Understanding of core cybersecurity principles, including malware detection, device and account security, and defense against phishing attacks. Committed to continuous learning in the evolving field, eager to contribute effectively.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out to me through email or connect with me on social media.</p>
+    <ul class="contact-links">
+        <li><a href="mailto:tanoy.cal@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+        <li><a href="https://github.com/TanoyBosh" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/tanoy-bosh/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+  </section>
+
+
+ <footer>
+    <p>Made by Tanoy Bosh &copy; <span id="currentYear"></span></p>
+ </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
